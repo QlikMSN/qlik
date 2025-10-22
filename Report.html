@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserverings Rapport</title>
+    <style>
+        @page { size: A4; margin: 15mm; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Calibri", "Arial", sans-serif; font-size: 11pt; color: #000; background: white; }
+        .page { width: 210mm; min-height: 297mm; padding: 15mm; background: white; page-break-after: always; position: relative; }
+        .page:last-child { page-break-after: auto; }
+        .header { background: linear-gradient(135deg, #1F4788 0%, #2d5aa8 100%); color: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 16pt; margin-bottom: 8px; font-weight: 600; }
+        .header .reservation-number { font-size: 22pt; font-weight: bold; margin-top: 5px; letter-spacing: 1px; }
+        .section { margin-bottom: 18px; }
+        .section-title { background-color: #4472C4; color: white; padding: 10px 15px; font-weight: bold; font-size: 12pt; margin-bottom: 12px; border-radius: 4px; }
+        .data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; padding: 10px; background: #f8f9fa; border-radius: 4px; }
+        .data-field { display: flex; flex-direction: column; }
+        .data-label { font-size: 9pt; color: #666; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; font-weight: 600; }
+        .data-value { font-size: 11pt; color: #0070C0; font-weight: 600; }
+        .data-value.large { font-size: 13pt; }
+        .highlight-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 12px; margin: 10px 0; border-radius: 4px; }
+        .highlight-box .label { font-size: 9pt; color: #856404; font-weight: 600; margin-bottom: 4px; }
+        .highlight-box .value { font-size: 12pt; color: #000; font-weight: bold; }
+        .badge { display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 10pt; font-weight: 600; }
+        .badge.yes { background: #d4edda; color: #155724; }
+        .badge.no { background: #f8d7da; color: #721c24; }
+        .footer { position: absolute; bottom: 15mm; left: 15mm; right: 15mm; padding-top: 10px; border-top: 2px solid #4472C4; text-align: center; font-size: 9pt; color: #666; }
+        @media print { body { print-color-adjust: exact; -webkit-print-color-adjust: exact; } .page { margin: 0; box-shadow: none; } }
+    </style>
+</head>
+<body>
+<div class="page">
+    
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Voertuig Reserverings Rapport</h1>
+        <div class="reservation-number">223379</div>
+    </div>
+    
+    <!-- VOERTUIG INFORMATIE -->
+    <div class="section">
+        <div class="section-title">VOERTUIG INFORMATIE</div>
+        
+        <div class="data-grid">
+            <div class="data-field">
+                <div class="data-label">Kenteken</div>
+                <div class="data-value large">JGX-77-K</div>
+            </div>
+            
+            <div class="data-field">
+                <div class="data-label">Polis Volgnummer</div>
+                <div class="data-value"></div>
+            </div>
+            
+            <div class="data-field">
+                <div class="data-label">Merk & Model</div>
+                <div class="data-value">Mercedes-Benz A-klasse</div>
+            </div>
+            
+            <div class="data-field">
+                <div class="data-label">Type</div>
+                <div class="data-value">180 mhev business solution amg 110kW 7g-dct aut</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- VOERTUIG SPECIFICATIES -->
+    <div class="section">
+        <div class="section-title">SPECIFICATIES</div>
+        
+        <div class="data-grid">
+            <div class="data-field">
+                <div class="data-label">Kilometerstand</div>
+                <div class="data-value">0 km</div>
+            </div>
+            
+            <div class="data-field">
+                <div class="data-label">Banden Gemonteerd</div>
+                <div class="data-value">Zomer</div>
+            </div>
+            
+            <div class="data-field">
+                <div class="data-label">Automaat</div>
+                <div class="data-value">1</div>
+            </div>
+            
+            <div class="data-field">
+                <div class="data-label">Trekhaak</div>
+                <div class="data-value">0</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ONDERHOUD INFORMATIE -->
+    <div class="section">
+        <div class="section-title">ONDERHOUD</div>
+        
+        <div class="highlight-box">
+            <div class="label">Volgende Onderhoudsbeurt</div>
+            <div class="value">20000 km</div>
+        </div>
+        
+        <div class="data-grid">
+            <div class="data-field">
+                <div class="data-label">KM Laatste Beurt</div>
+                <div class="data-value">0 km</div>
+            </div>
+            
+            <div class="data-field">
+                <div class="data-label">Datum Laatste Beurt</div>
+                <div class="data-value">-</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- RESERVERINGS PERIODE -->
+    <div class="section">
+        <div class="section-title">RESERVERINGS PERIODE</div>
+        
+        <div class="data-grid">
+            <div class="data-field">
+                <div class="data-label">Auto Datum In</div>
+                <div class="data-value"></div>
+            </div>
+            
+            <div class="data-field">
+                <div class="data-label">Auto Datum Uit</div>
+                <div class="data-value"></div>
+            </div>
+            
+            <div class="data-field">
+                <div class="data-label">Start Tijd</div>
+                <div class="data-value">08:30</div>
+            </div>
+            
+            <div class="data-field">
+                <div class="data-label">Eind Datum</div>
+                <div class="data-value"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- FOOTER -->
+    <div class="footer">
+        Gegenereerd op 22-10-2025, 06:49:46 | Reservering 223379
+    </div>
+    
+</div>
+</body>
+</html>
